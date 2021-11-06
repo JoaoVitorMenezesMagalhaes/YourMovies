@@ -21,25 +21,25 @@ export default {
                 items: await basicFetch(`/movie/toprated?language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'horror',
-                title: 'Terrror',
-                items: []
-            },
-            {
-                slug: 'comedy',
-                title: 'Comédia',
-                items: []
-            },
-            {
-                slug: 'documentary',
-                title: 'Documentários',
-                items: []
-            },
-            {
                 slug: 'latest',
                 title: 'Lançamentos',
                 items: await basicFetch(`/movie/latest?language=pt-BR&api_key=${API_KEY}`)
             },
+            {
+                slug: 'horror',
+                title: 'Terrror',
+                items: await basicFetch(`/discover/movie?with_genres=27&language=pt-BR&api_key=${API_KEY}`)
+            },
+            {
+                slug: 'comedy',
+                title: 'Comédia',
+                items: await basicFetch(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
+            },
+            {
+                slug: 'documentary',
+                title: 'Documentários',
+                items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
+            }
         ]
     }
 }
