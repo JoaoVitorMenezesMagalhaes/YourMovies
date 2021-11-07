@@ -16,6 +16,11 @@ export default {
                 items: await basicFetch(`/trending/movie/week?language=pt-BR&api_key=${API_KEY}`),
             },
             {
+                slug: 'upcoming',
+                title: 'Lançamentos futuros',
+                items: await basicFetch(`/movie/upcoming?language=pt-BR&api_key=${API_KEY}`)
+            },
+            {
                 slug: 'horror',
                 title: 'Terrror',
                 items: await basicFetch(`/discover/movie?with_genres=27&language=pt-BR&api_key=${API_KEY}`)
