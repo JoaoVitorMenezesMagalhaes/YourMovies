@@ -3,11 +3,13 @@ import './App.css';
 import FeaturedMovie from './components/FeaturedMovie';
 import API from './API';
 import MovieRow from './components/MovieRow';
+import Header from './components/Header';
 
 export default () => {
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -18,15 +20,32 @@ export default () => {
       let randomSerie = Math.floor(Math.random()*(series[0].items.results.length-1));
       let serie = series[0].items.results[randomSerie];
       let serieInfo = await API.getMovieInfo(serie.id, 'tv');
-      console.log(serie)
       setFeaturedData(serieInfo);
     }
 
     loadAll();
   }, []);
 
+  useEffect(() => {
+    const scroll = () => {
+      if (window.scrollY > 20) {
+        setBlackHeader(true)
+      } else{
+        setBlackHeader(false)
+      }
+    }
+
+    window.addEventListener('scroll', scroll);
+
+    return () => {
+      window.removeEventListener('scroll', scroll);
+    }
+  }, []);
+
   return(
   <div className="page">
+
+    <Header black={blackHeader}/>
 
     {featuredData &&
       <FeaturedMovie item={featuredData}/>
