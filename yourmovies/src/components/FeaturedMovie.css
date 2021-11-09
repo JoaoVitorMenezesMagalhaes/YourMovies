@@ -93,3 +93,21 @@
     font-size: 15px;
     color: #999;
 }
+
+
+@media (max-width: 800px) {
+    .featured {
+        height: 90hv;
+    }
+    .featuredName {
+        font-size: 40px;
+    }
+    .info {
+        font-size: 17px;
+    }
+    .description {
+        font-size: 16px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+}

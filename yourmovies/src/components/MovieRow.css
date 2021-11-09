@@ -76,3 +76,11 @@
 .movieRow:hover .rightArrow {
     opacity: 1;
 }
+
+
+@media (max-width: 800px) {
+    .leftArrow,
+    .rightArrow {
+        opacity: 1;
+    }
+}

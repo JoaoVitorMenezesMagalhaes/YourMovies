@@ -28,9 +28,23 @@ header.black {
 .login {
     height: 70px;
     padding: 25px 30px 0px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    opacity: 1;
+    transition: all ease 0.3s;
 }
 
 .login img {
     height: 100%;
     border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    .login {
+        padding: 25px 10px 0px 10px;
+    }
+    .logo {
+        padding: 0px 20px 0px 10px;
+    }
 }
