@@ -16,6 +16,11 @@ export default {
                 items: await basicFetch(`/discover/tv?language=pt-BR&api_key=${API_KEY}`),
             },
             {
+                slug: 'toprated',
+                title: 'Favoritos da crítica',
+                items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`),
+            },
+            {
                 slug: 'trending',
                 title: 'Recomendados',
                 items: await basicFetch(`/trending/movie/week?language=pt-BR&api_key=${API_KEY}`),

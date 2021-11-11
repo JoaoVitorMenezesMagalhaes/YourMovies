@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './MovieRow.css';
 
+
 export default ({title, items}) => {
     const [barX, setBarX] = useState(0);
     const moveLeft = () => {
@@ -18,6 +19,7 @@ export default ({title, items}) => {
         }
         setBarX(forwardX)
     }
+
     return (
         <div className="movieRow">
             <h2> {title} </h2>
