@@ -4,6 +4,7 @@ import './MovieRow.css';
 
 export default ({title, items}) => {
     const [barX, setBarX] = useState(0);
+
     const moveLeft = () => {
         let backX = barX + Math.round(window.innerWidth / 2)
         if (backX > 0) {
@@ -37,6 +38,7 @@ export default ({title, items}) => {
                     {items.results.length > 0 && items.results.map((item, key)=>(
                         <div key={key} className="movRowItem">
                             <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title}/>
+                            <a href={`/list/add/${item.id}`} className="listBtn">+ Minha Lista</a>
                         </div>
                     ))}
                 </div>
